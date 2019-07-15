@@ -2,6 +2,7 @@ package com.fsit.didemo.controllers;
 
 import com.fsit.didemo.services.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 /**
  * @author sean.bowen
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * Creation date: 2019-07-15
  * @since 2019
  */
+@Controller
 public class ConstructorInjectedController {
 
     private GreetingService greetingService;
@@ -19,7 +21,7 @@ public class ConstructorInjectedController {
         this.greetingService = greetingService;
     }
 
-    String sayHello() {
+    public String sayHello() {
         return greetingService.sayGreeting();
     }
 }
